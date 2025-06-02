@@ -124,6 +124,13 @@ export const getValidateUser = async (correo,contrasena) =>{
 //--------POST --Agregar usuario
 export const postUser = async (paUser) => {
     try {
+
+        const v = await getUserC(paUser.correo);
+
+        if(v && v.verificado){
+            throw boom.badData('El correo ya está registrado.');
+        }
+
         const newUser = new Users(paUser);
 
         // Generar el token de verificación
@@ -145,7 +152,7 @@ export const postUser = async (paUser) => {
         return newUser;
     } catch (error) {
         console.error(error);
-        throw error;
+        return error;
     }
 }
 
