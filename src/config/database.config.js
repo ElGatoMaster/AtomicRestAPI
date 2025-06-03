@@ -1,15 +1,19 @@
 import mongoose from "mongoose";
-import config from "./config";
+import config from "./config.js";
 
-(async () => {
-    try {
-        const db = await mongoose.connect(config.CONNECTION_STRING, {
-            //useNewUrlParser: true,
-            //useUnifiedTopology: true,
-            dbName: config.DATABASE
-        });
-        console.log('Database is connected to: ', db.connection.name);
-    } catch (error) {
-        console.log('Error: ', error);
-    }
-})();
+let isConnected = false;
+
+export async function connectToDatabase() {
+  if (isConnected) return;
+
+  try {
+    const db = await mongoose.connect(config.CONNECTION_STRING, {
+      dbName: config.DATABASE,
+    });
+    isConnected = true;
+    console.log("🔗 MongoDB connected to:", db.connection.name);
+  } catch (error) {
+    console.error("❌ MongoDB connection error:", error);
+    throw error;
+  }
+}
