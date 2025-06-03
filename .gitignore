@@ -1,3 +1,4 @@
 node_modules
 .env
 request/Atom.http
+dist
