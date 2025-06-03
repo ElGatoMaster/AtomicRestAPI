@@ -2,11 +2,12 @@
   "name": "atomicrestapi",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "babel-node": "babel-node",
     "dev": "nodemon --exec npm run babel-node -- src/index.js",
     "build": "babel src --out-dir public",
-    "start": "node index.js"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
