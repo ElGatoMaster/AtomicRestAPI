@@ -10,7 +10,7 @@ if (process.env.SERVERLESS) {
   handler = serverless(app);
 } else {
   app.listen(app.get("port"), '0.0.0.0', () => {
-    console.log(`Server listening on port ${PORT}`);
+    console.log(`Server listening on port ${app.get("port")}`);
   });
 }
 
