@@ -3,7 +3,7 @@ import cors from "cors";
 import morgan from "morgan";
 
 import config from "./config/config.js";
-import routeAPI from "./api/atom/routes/index.js";
+import routeAPI from "./backend/atom/routes/index.js";
 import { connectToDatabase } from "./config/database.config.js";
 
 const app = express();

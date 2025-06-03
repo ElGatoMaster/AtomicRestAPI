@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import boom from '@hapi/boom';
-import config from '../../../config/config';
+import config from '../../../config/config.js';
 
 export function verificarToken(req,res,next){
     const authHeader = req.header('Authorization');

@@ -1,6 +1,6 @@
 import serverless from "serverless-http";
-import app from "../src/app.js";
-import { connectToDatabase } from "../src/config/database.config.js";
+import app from "../app.js";
+import { connectToDatabase } from "../config/database.config.js";
 
 await connectToDatabase(); // asegura conexión antes de usar app
 
