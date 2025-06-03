@@ -1,10 +1,10 @@
 {
   "name": "atomicrestapi",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/backend/index.js",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js",
+    "dev": "nodemon src/backend/index.js",
+    "start": "node src/backend/index.js",
     "vercel-build": "echo 'No build step required for serverless'",
     "test": "echo \"No tests specified\" && exit 0"
   },
