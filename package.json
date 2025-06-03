@@ -2,7 +2,6 @@
   "name": "atomicrestapi",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "nodemon --exec npm run babel-node -- src/index.js",
     "build": "npx babel src --out-dir dist",
